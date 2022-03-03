@@ -32,15 +32,19 @@ class _SighInMainState extends State<SignInMain>
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
+                // user name text field
                 Padding(
                   padding: EdgeInsets.only(top: 200.0 * WidgetsConstant.width),
                   child: UserNameTextField(
                     userNameController: userNameController,
                   ),
                 ),
+                // password text field
                 PasswordTextField(
                   signPasswordController: signPasswordController,
                 ),
+
+                // sign in button
                 SignInButton(
                   callback: () {
                     if (_formKey.currentState!.validate()) {

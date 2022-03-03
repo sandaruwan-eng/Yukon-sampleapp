@@ -40,6 +40,7 @@ class _HomePageState extends State<HomePage> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          // primary account number text view
           Text(
             primaryAccountNumber.isEmpty
                 ? ""
@@ -60,6 +61,7 @@ class _HomePageState extends State<HomePage> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
+                    // PDF download button
                     RaisedButton(
                       color: homeScreenButton,
                       onPressed: () async {
@@ -90,6 +92,8 @@ class _HomePageState extends State<HomePage> {
                         style: buttonsTextstyle,
                       ),
                     ),
+
+                    // primary account number read button
                     RaisedButton(
                       color: homeScreenButton,
                       onPressed: () async {
