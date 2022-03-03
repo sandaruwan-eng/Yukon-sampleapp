@@ -70,6 +70,7 @@ class _HomePageState extends State<HomePage> {
                         isFileExsist = pdfFile.existsSync();
 
                         if (isFileExsist) {
+                          // route to PDF viewer screen
                           Navigator.push(context,
                               MaterialPageRoute(builder: (context) {
                             return PdfViewScreen(pdfFile.path);
@@ -80,6 +81,7 @@ class _HomePageState extends State<HomePage> {
                             requestWritePermission();
                             _allowWriteFile = true;
                           }
+                          // download PDF file
                           await downloadFile(
                               UrlConstant.PDF_URL, "$path/$extension", context);
                           setState(() {
@@ -88,7 +90,7 @@ class _HomePageState extends State<HomePage> {
                         }
                       },
                       child: Text(
-                        isFileExsist ? "View pdf" : "Downlod pdf",
+                        isFileExsist ? "View pdf" : "Download pdf",
                         style: buttonsTextstyle,
                       ),
                     ),
@@ -97,6 +99,7 @@ class _HomePageState extends State<HomePage> {
                     RaisedButton(
                       color: homeScreenButton,
                       onPressed: () async {
+                        // read data from downloaded PDF
                         String result = await readPdf(extension, context);
                         if (result != "") {
                           setState(() {
